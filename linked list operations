@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Employee {
+    int empId;
+    char empName[50];
+    struct Employee* next;
+};
+struct Employee* head = NULL;
+void addEmployee(int id, char name[]) {
+    struct Employee* newEmployee = (struct Employee*)malloc(sizeof(struct Employee));
+    newEmployee->empId = id;
+    strcpy(newEmployee->empName, name);
+    newEmployee->next = head;
+    head = newEmployee;
+}
+void displayEmployees() {
+    struct Employee* temp = head;
+    while (temp != NULL) {
+        printf("Employee ID: %d, Name: %s\n", temp->empId, temp->empName);
+        temp = temp->next;
+    }
+}
+int main() {
+    addEmployee(1, "Alice");
+    addEmployee(2, "Bob");
+    addEmployee(3, "Charlie");
+    displayEmployees();
+    return 0;
+}
