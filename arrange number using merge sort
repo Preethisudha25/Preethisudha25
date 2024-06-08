@@ -1,0 +1,13 @@
+#include <stdio.h>
+void merge(int arr[], int l, int m, int r) {
+}
+void mergeSort(int arr[], int l, int r) {
+}
+int main() {
+    int arr[] = {12, 11, 13, 5, 6, 7};
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    printf("Given array is \n");
+    mergeSort(arr, 0, arr_size - 1);
+    printf("\nSorted array is \n")
+    return 0;
+}
